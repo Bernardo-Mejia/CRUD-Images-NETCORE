@@ -1,0 +1,39 @@
+﻿@model List<Info_ToolsCRUD_SP_Imgs.Models.Imagen>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a asp-action="Crear" asp-controller="Libro" class="btn btn-outline-primary">Crear</a>
+<br />
+<br />
+
+@if (Model.Count() > 0)
+{
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var item in Model)
+        {
+             <div class="col">
+                <div class="card h-100">
+                    <img src="data:img/jpg; base64, @item.Image" style="max-height:30vh; object-fit:contain;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <p class="card-text">@item.Fecha_Creacion</p>
+                    </div>
+                    <div class="card-footer">
+                        <a type="button" asp-action="Editar" asp-controller="Libro" class="btn-sm btn-outline-warning" asp-route-id="@item.Id_Imagen">Editar</a>
+                        <a type="button" asp-action="Eliminar" asp-controller="Libro" class="btn-sm btn-outline-danger" asp-route-id="@item.Id_Imagen">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-danger" role="alert">
+        No hay datos para mostrar
+    </div>
+}

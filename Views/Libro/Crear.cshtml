@@ -1,0 +1,41 @@
+﻿@model Info_ToolsCRUD_SP_Imgs.Models.Imagen
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<form enctype="multipart/form-data" asp-action="Crear" asp-controller="Libro" class="container" method="post">
+    <h3>Insertar registros</h3>
+    <table class="table">
+        <tr>
+            <td>
+                <label class="form-label">Nombre: </label>
+            </td>
+            <td>
+                <input class="form-control" type="text" required asp-for="Nombre" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label class="form-label">Imagen: </label>
+            </td>
+            <td>
+                <input class="form-control" type="file" required asp-for="File" />
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" class="btn btn-success" value="Crear" />
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<a class="btn btn-primary" asp-action="Index" asp-controller="Libro">Volver</a>
+
+<label class="alert-danger">@ViewBag.error</label>

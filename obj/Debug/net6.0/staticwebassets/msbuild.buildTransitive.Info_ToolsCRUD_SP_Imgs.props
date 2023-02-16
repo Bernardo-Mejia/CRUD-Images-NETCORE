@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Info_ToolsCRUD_SP_Imgs.props" />
+</Project>

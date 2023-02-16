@@ -1,0 +1,51 @@
+﻿@model Info_ToolsCRUD_SP_Imgs.Models.Imagen
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>¿Eliminar?</h1>
+
+<form enctype="multipart/form-data" asp-action="Eliminar" asp-controller="Libro" class="container-fluid" method="post">
+    <div class="card mb-6">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="data:img/jpg; base64, @Model.Image" class="rounded" width="400">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Registro</h5>
+                    <table class="table">
+                        <input class="form-control" type="hidden" asp-for="Fecha_Creacion" />
+                        <input class="form-control" type="hidden" asp-for="Id_Imagen" />
+                        <tr>
+                            <td>
+                                <label class="form-label">Nombre: </label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" disabled asp-for="Nombre" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label class="form-label">Fecha de creación: </label>
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" disabled asp-for="Fecha_Creacion" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" class="btn btn-danger" value="Eliminar" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<a class="btn btn-primary" asp-action="Index" asp-controller="Libro">Volver</a>

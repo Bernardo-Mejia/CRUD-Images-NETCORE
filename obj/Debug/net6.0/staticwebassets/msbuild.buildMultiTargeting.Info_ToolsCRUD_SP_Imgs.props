@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Info_ToolsCRUD_SP_Imgs.props" />
+</Project>
